@@ -14,37 +14,11 @@ export function createTodo(title: string): Todo {
   }
 }
 
-export function destroy(todos: Todo[], todo: Todo): Todo[] {
-  return todos.filter(function (candidate) {
-    return candidate?.id !== todo?.id;
-  });
-}
-
-export function update(todo: Todo, text: string): Todo {
-  return {
-    ...todo,
-    title: text
-  }
-};
-
-export function toggleAll(todos: Todo[], checked: boolean): Todo[] {
-  return todos.map(function (todo) {
-    return {
-      ...todo,
-      completed: checked
-    }
-  });
-}
-
-export function toggle(todo: Todo): Todo {
-  return {
-    ...todo,
-    completed: !todo?.completed
-  }
-}
-
-export function clearCompleted(todos: Todo[]) {
+export function filterTodos(todos: Todo[], status?: Todo['completed']) {
   return todos.filter(function (todo) {
-    return !todo.completed;
+    if (status !== false && status !== true) {
+      return true
+    }
+    return todo.completed === status;
   });
 }

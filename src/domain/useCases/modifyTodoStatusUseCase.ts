@@ -11,9 +11,9 @@ export interface IModifyStatusServices {
 export async function modifyStatus(completed: boolean, todo: Todo, services: IModifyStatusServices) {
   try {
     const updated = { ...todo, completed }
-  await updateTodo(updated)
-  const todos = await listTodo()
-  services.event.notifyUpdated(todos)
+    await updateTodo(updated)
+    const todos = await listTodo()
+    services.event.notifyUpdated(todos)
   } catch (e) {
     reportError(e)
   }

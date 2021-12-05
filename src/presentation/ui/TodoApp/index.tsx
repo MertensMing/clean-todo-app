@@ -6,6 +6,7 @@ import { useViewTodo } from "../../view-models/useViewTodo";
 import { useDeleteTodo } from "../../view-models/useDeleteTodo";
 import { Todo } from "../../../domain/entities/todo";
 import { useBatchModifyTodoStatus } from "../../view-models/useBatchModifyTodoStatus";
+import { useFilterTodos } from "../../view-models/useFilterTodos";
 
 const TodoApp: React.FC = () => {
   const store = useTodoStore()
@@ -13,6 +14,7 @@ const TodoApp: React.FC = () => {
   const { handleAdd, handleInputNewTodoTitle } = useAddTodo(store)
   const { handleDelete } = useDeleteTodo(store)
   const { handleBatchMofifyStatus } = useBatchModifyTodoStatus(store)
+  const { handleCheck } = useFilterTodos(store)
   const { setTodos } = store
 
   useEffect(() => {
@@ -53,6 +55,11 @@ const TodoApp: React.FC = () => {
             }}
           />
         </header>
+        <div>
+          <input className="cursor-pointer mr-2" type="checkbox" checked={store.fliterStatus === undefined} onClick={() => handleCheck()} />全部
+          <input className="cursor-pointer mr-2 ml-4" type="checkbox" checked={store.fliterStatus} onClick={() => handleCheck(true)} />已完成
+          <input className="cursor-pointer mr-2 ml-4" type="checkbox" checked={store.fliterStatus === false} onClick={() => handleCheck(false)} />待完成
+        </div>
         {store?.todos?.length > 0 &&
           <div className="pt-4">
             {

@@ -11,8 +11,8 @@ export interface IBatchModifyStatusServices {
 export async function batchModifyStatus(completed: boolean, services: IBatchModifyStatusServices) {
   try {
     await batchUpdateTodoStatus(completed)
-  const todos = await listTodo()
-  services.store.setTodoList(todos)
+    const todos = await listTodo()
+    services.store.setTodoList(todos)
   } catch (e) {
     reportError(e)
   }
