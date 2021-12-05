@@ -1,14 +1,14 @@
 import { api, logger } from "../../external";
 import { Todo, createTodo } from "../entities/todo";
 
-interface IAddTodoServices {
+export interface IAddTodoServices {
   store: {
     setTodoList: (todos: Todo[]) => void
     clearInput: () => void
   }
 }
 
-interface IInputNewTodoTitleServices {
+export interface IInputNewTodoTitleServices {
   store: {
     setNewTodoTitle: (text: string) => void
   }
