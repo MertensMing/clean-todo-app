@@ -31,7 +31,7 @@ const TodoApp: React.FC = () => {
       <div className="mx-auto" style={{ width: 400 }}>
         <header>
           {
-            store?.todos?.length > 0 && 
+            store?.todos?.length > 0 && store?.fliterStatus === undefined && 
             <input
               className="cursor-pointer"
               type="checkbox"
