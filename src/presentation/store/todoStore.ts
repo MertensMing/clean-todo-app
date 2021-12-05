@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { Todo } from "../../domain/entities/todo";
+import { Todo } from "../../core/entities/todo";
 
 export interface ITodoStore {
   todos: Todo[]

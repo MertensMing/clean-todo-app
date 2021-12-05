@@ -1,5 +1,5 @@
 import React from "react";
-import { Todo } from "../../../domain/entities/todo";
+import { Todo } from "../../../core/entities/todo";
 import { useTodoStore } from "../../store/todoItemStore";
 import { useModifyTodoStatus } from "../../view-models/useModifyTodoStatus";
 import { useModifyTodoTitle } from "../../view-models/useModifyTodoTitle";

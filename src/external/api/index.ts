@@ -1,4 +1,4 @@
-import { Todo } from "../../domain/entities/todo";
+import { Todo } from "../../core/entities/todo";
 import { API } from '../../services/api'
 
 function store(namespace: string, data?: any) {

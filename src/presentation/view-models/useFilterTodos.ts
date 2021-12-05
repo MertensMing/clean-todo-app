@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { filterTodos } from "../../domain/useCases/filterTodosUseCase";
+import { filterTodos } from "../../core/useCases/filterTodosUseCase";
 import { ITodoStore } from "../store/todoStore";
 
 export function useFilterTodos({ setTodos, setFilterStatus }: ITodoStore) {

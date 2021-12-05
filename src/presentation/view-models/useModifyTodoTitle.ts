@@ -1,6 +1,6 @@
 import { useCallback } from "react";
-import { Todo } from "../../domain/entities/todo";
-import { hideInput, showInput, modifyTitle, IModifyTitleServices } from "../../domain/useCases/modifyTodoTitleUseCase";
+import { Todo } from "../../core/entities/todo";
+import { hideInput, showInput, modifyTitle, IModifyTitleServices } from "../../core/useCases/modifyTodoTitleUseCase";
 import { ITodoItemStore } from "../store/todoItemStore";
 
 export function useModifyTodoTitle(

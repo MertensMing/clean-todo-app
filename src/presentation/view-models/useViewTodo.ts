@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { viewTodo } from '../../domain/useCases/viewTodoUseCase'
+import { viewTodo } from '../../core/useCases/viewTodoUseCase'
 import { ITodoStore } from "../store/todoStore";
 
 export function useViewTodo({ setTodos }: ITodoStore) {

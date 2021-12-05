@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { deleteTodo } from "../../domain/useCases/deleteTodoUseCase";
+import { deleteTodo } from "../../core/useCases/deleteTodoUseCase";
 import { ITodoStore } from "../store/todoStore";
 
 export function useDeleteTodo({ setTodos }: Pick<ITodoStore, 'setTodos'>) {

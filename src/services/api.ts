@@ -1,4 +1,4 @@
-import { Todo } from "../domain/entities/todo";
+import { Todo } from "../core/entities/todo";
 
 export interface API {
   listTodo: () => Promise<Todo[]>

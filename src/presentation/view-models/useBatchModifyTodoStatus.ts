@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { batchModifyStatus } from "../../domain/useCases/batchModifyTodoStatusUseCase";
+import { batchModifyStatus } from "../../core/useCases/batchModifyTodoStatusUseCase";
 import { ITodoStore } from "../store/todoStore";
 
 export function useBatchModifyTodoStatus({ setTodos }: ITodoStore) {

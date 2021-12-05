@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { addTodo, inputNewTodoTitle } from "../../domain/useCases/addTodoUseCase";
+import { addTodo, inputNewTodoTitle } from "../../core/useCases/addTodoUseCase";
 import { ITodoStore } from "../store/todoStore";
 
 export function useAddTodo({ setTodos, setValue }: ITodoStore) {

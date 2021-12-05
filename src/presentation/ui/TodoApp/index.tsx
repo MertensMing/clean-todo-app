@@ -4,7 +4,7 @@ import { useTodoStore } from "../../store/todoStore";
 import { useAddTodo } from "../../view-models/useAddTodo";
 import { useViewTodo } from "../../view-models/useViewTodo";
 import { useDeleteTodo } from "../../view-models/useDeleteTodo";
-import { Todo } from "../../../domain/entities/todo";
+import { Todo } from "../../../core/entities/todo";
 import { useBatchModifyTodoStatus } from "../../view-models/useBatchModifyTodoStatus";
 import { useFilterTodos } from "../../view-models/useFilterTodos";
 

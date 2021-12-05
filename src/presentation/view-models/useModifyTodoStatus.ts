@@ -1,6 +1,6 @@
 import { useCallback } from "react";
-import { Todo } from "../../domain/entities/todo";
-import { IModifyStatusServices, modifyStatus } from "../../domain/useCases/modifyTodoStatusUseCase";
+import { Todo } from "../../core/entities/todo";
+import { IModifyStatusServices, modifyStatus } from "../../core/useCases/modifyTodoStatusUseCase";
 
 export function useModifyTodoStatus() {
   return {
