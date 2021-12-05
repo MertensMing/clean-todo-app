@@ -1,6 +1,5 @@
+import { api, logger } from "../../external";
 import { Todo } from "../entities/todo";
-import { deleteTodo as deleteTodoApi, listTodo } from '../../external/api'
-import { reportError } from "../../external/logger";
 
 interface IDeleteTodoServices {
   store: {
@@ -10,10 +9,10 @@ interface IDeleteTodoServices {
 
 export async function deleteTodo(id: string, services: IDeleteTodoServices) {
   try {
-    await deleteTodoApi(id)
-    const todos = await listTodo()
+    await api.deleteTodo(id)
+    const todos = await api.listTodo()
     services?.store?.setTodoList(todos)
   } catch (e) {
-    reportError(e)
+    logger.reportError(e)
   }
 }

@@ -1,5 +1,4 @@
-import { listTodo, updateTodo } from "../../external/api";
-import { reportError } from "../../external/logger";
+import { api, logger } from "../../external";
 import { Todo } from "../entities/todo";
 
 export interface IModifyTitleServices {
@@ -30,12 +29,12 @@ export function showInput(services: IShowInputServices) {
 export async function modifyTitle(title: string, todo: Todo, services: IModifyTitleServices) {
   try {
     const updated = { ...todo, title }
-    await updateTodo(updated)
-    const todos = await listTodo()
+    await api.updateTodo(updated)
+    const todos = await api.listTodo()
     services.event.notifyUpdated(todos)
     services.store.hideInput()
   } catch (e) {
-    reportError(e)
+    logger.reportError(e)
   }
 }
 

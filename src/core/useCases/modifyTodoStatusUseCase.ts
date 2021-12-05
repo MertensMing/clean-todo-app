@@ -1,5 +1,4 @@
-import { listTodo, updateTodo } from "../../external/api";
-import { reportError } from "../../external/logger";
+import { api, logger } from "../../external";
 import { Todo } from "../entities/todo";
 
 export interface IModifyStatusServices {
@@ -11,10 +10,10 @@ export interface IModifyStatusServices {
 export async function modifyStatus(completed: boolean, todo: Todo, services: IModifyStatusServices) {
   try {
     const updated = { ...todo, completed }
-    await updateTodo(updated)
-    const todos = await listTodo()
+    await api.updateTodo(updated)
+    const todos = await api.listTodo()
     services.event.notifyUpdated(todos)
   } catch (e) {
-    reportError(e)
+    logger.reportError(e)
   }
 }

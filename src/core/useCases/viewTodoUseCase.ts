@@ -1,5 +1,4 @@
-import { listTodo } from "../../external/api";
-import { reportError } from "../../external/logger";
+import { api, logger } from "../../external";
 import { Todo } from "../entities/todo";
 
 export interface IViewTodoServices {
@@ -10,9 +9,9 @@ export interface IViewTodoServices {
 
 export async function viewTodo(services: IViewTodoServices) {
   try {
-    const todos = await listTodo()
+    const todos = await api.listTodo()
     services?.store?.setTodoList(todos)
   } catch (e) {
-    reportError(e)
+    logger.reportError(e)
   }
 }

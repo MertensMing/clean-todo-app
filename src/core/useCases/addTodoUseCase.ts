@@ -1,6 +1,5 @@
+import { api, logger } from "../../external";
 import { Todo, createTodo } from "../entities/todo";
-import { createTodo as createTodoApi, listTodo } from '../../external/api'
-import { reportError } from "../../external/logger";
 
 interface IAddTodoServices {
   store: {
@@ -22,11 +21,11 @@ export async function inputNewTodoTitle(text: string, services: IInputNewTodoTit
 export async function addTodo(text: string, services: IAddTodoServices) {
   try {
     const todo = createTodo(text)
-    await createTodoApi(todo)
-    const todos = await listTodo()
+    await api.createTodo(todo)
+    const todos = await api.listTodo()
     services?.store?.setTodoList(todos)
     services?.store?.clearInput()
   } catch (e) {
-    reportError(e)
+    logger.reportError(e)
   }
 }
